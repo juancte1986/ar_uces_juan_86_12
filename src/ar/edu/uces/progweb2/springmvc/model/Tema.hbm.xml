@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="ar.edu.uces.progweb2.springmvc.model.Tema" table="Tema">
+		<id column="id" name="id">
+			<generator class="native" />
+		</id>
+		<property column="titulo" name="titulo" />
+		<property column="texto" name="texto" />
+		<property column="puntuacion" name="puntuacion" />
+		<property column="fecha" name="fecha" />
+		<many-to-one name="estado"
+			class="ar.edu.uces.progweb2.springmvc.model.EstadoTema" column="id_estado"
+			lazy="false" />
+		<many-to-one name="owner"
+			class="ar.edu.uces.progweb2.springmvc.model.Usuario" column="id_owner"
+			lazy="false" />
+		<many-to-one name="genero" class="ar.edu.uces.progweb2.springmvc.model.Genero"
+			column="id_genero" lazy="false" />
+		<set name="respuestas" cascade="all" lazy="false">
+			<key column="id" />
+			<one-to-many class="ar.edu.uces.progweb2.springmvc.model.Respuesta" />
+		</set>
+	</class>
+</hibernate-mapping>

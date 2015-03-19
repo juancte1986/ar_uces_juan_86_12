@@ -1,0 +1,61 @@
+@CHARSET "UTF-8";
+/* .prueba { */
+/* 	background-color: #2980B9; */
+/* 	position:relative; */
+/* } */
+
+.derechaFloat {
+	float: right;
+}
+
+.leftFloat {
+	float: left;
+}
+
+.anguloIzquierdo  {
+	position: absolute;
+	top: 0;
+	left: 1;
+}
+
+.small{
+	width: 50px; height: 50px;
+}
+
+/* estilos del panel de temas heading */
+
+.panel-heading2 {
+	padding: 10px 15px;
+	border-bottom: 1px solid transparent;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	height: 40px;
+	background-color: #8b9dc3;
+	font-size: 18px;
+	font-family: sans-serif;
+	color: #ffffff;
+}
+
+.btn-right-float{
+	 float: right;
+}
+
+.search{
+	width: 300px;
+}
+
+.form-size{
+	min-width: 200px;
+}
+
+.panel-body2{
+	padding: 15px;
+	min-height: 100px;
+}
+
+.tema-head{
+	background-color: #006699;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
