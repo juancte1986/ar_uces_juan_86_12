@@ -32,6 +32,57 @@
 			charset="utf-8"></script>
 		<title>Java : String</title>
 		<script type="text/javascript">
+		
+			$.metodo = function(lista) {
+	
+				var cadena = '<table>';
+
+				$.each(lista, function(index, value) {
+					cadena += '<thead>';
+					cadena += '<tr>';
+					cadena += '<th>10/02/2013<div class="derechaFloat">#'+index+' | <a href="#">Inicio</a></div></th>' ;
+					cadena += '</tr>';
+					cadena += '</thead>';
+					
+					cadena += '<tbody>';
+					
+					cadena += '<tr style="background-color: #dfe3ee">';
+					cadena += '<div class="derechaFloat"> Mensajes: 100<br/>Ubicacion: Buenos Aires<br/>Antiguedad: 4 años<br/></div>';
+					cadena += '<div style="width: 100px;"><div class="derechaFloat"><H4>pepe</H4></div>'
+						+'<img src="${pageContext.request.contextPath}/imagen/cerrado.jpeg"class="img-img-thumbnail small" alt="Responsive image">'
+						+'</div>'; //Datos del usuario
+					cadena += '</tr>';
+					
+					cadena += '<tr>';
+					cadena += '<th><div align="center">'+ value.tema.titulo+'</div></th>';
+					cadena += '</tr>';//titulo
+					
+					cadena += '</tr>';
+					cadena += '<td>' +value.texto+'</td>';
+					cadena += '</tr>';
+					
+					cadena +='<tr>';
+					cadena +='<div align="right"><div class="btn-group page-header-btn" role="group"aria-label="...">'
+						+'<a class=" btn-link" href="#">Inicio</a><button id="btn4" type="button" class="btn-primary">Citar</button>'
+						+'<div id="form-mensaje"><div class="jqte-test"><div id="imagen"></div></div>'
+						+'<button type="button" class="btn-primary">Guardar</button>'
+						+'</div>'
+			   			+'<button id="btn5" type="button" class="btn-primary">Me gusta</button>'
+			   			+'</div>'
+			   			+'</div>'
+			   			+'</td>'
+			   			+'</tr>';
+					cadena += '</tbody>';
+				});
+				cadena += '</table>';
+				$("#tabla").html(cadena);
+			}
+	
+			$(document).ready(function() {
+				lista = ${respuestas};
+				$.metodo(lista);
+			});
+
 			$(function() {
 				$("#btn2").click(function() {
 					$("#form-register").dialog("open");
@@ -153,65 +204,66 @@
 								</ul>
 							</nav>
 							<div class="datagrid">
-								<table>
-									<thead>
-										<tr>
-											<th>10/02/2013<div class="derechaFloat">#1 | Arriba</div></th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr style="background-color: #dfe3ee">
-											<td>
-												<div class="derechaFloat">
-													Mensajes: 100<br/>
-													Ubicacion: Buenos Aires<br/>
-													Antiguedad: 4 años<br/>
-												</div>
-												<div style="width: 100px;">
-													<div class="derechaFloat">
-														<H4>pepe</H4>
-													</div>
-													<img src="${pageContext.request.contextPath}/imagen/cerrado.jpeg"
-														class="img-img-thumbnail small" alt="Responsive image">
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td><p class="text-center">Ya llego java 7</p><br/></td>
-										</tr>
-										<tr>
-											<td>Amigos ya llego la nueva version de java!<br/> Saludos,</td>
-										</tr>
-										<tr>
-											<td>
-												<div align="right">
-													<div class="btn-group page-header-btn" role="group"
-														aria-label="...">
-														<a class=" btn-link" href="#">Inicio</a>
-														<button id="btn4" type="button" class="btn-primary">Citar</button>
-															<div id="form-mensaje">
-																<div class="jqte-test">
-																	<div id="imagen"></div>
-															    </div>
-																<script>
-																	$('.jqte-test').jqte();
-																	var jqteStatus = true;
-																	$(".status").click(function() {
-																		jqteStatus = jqteStatus ? false : true;
-																		$('.jqte-test').jqte({
-																			"status" : jqteStatus
-																		})
-																	});
-															 	</script>
-															 	<button type="button" class="btn-primary">Guardar</button>
-															</div>
-													   	<button id="btn5" type="button" class="btn-primary">Me gusta</button>
-													</div>
-												</div>
-											</td>
-										</tr>
-									</tbody>
-								</table>
+								<div id="tabla"></div>
+<!-- 								<table> -->
+<!-- 									<thead> -->
+<!-- 										<tr> -->
+<!-- 											<th>10/02/2013<div class="derechaFloat">#1 | Arriba</div></th> -->
+<!-- 										</tr> -->
+<!-- 									</thead> -->
+<!-- 									<tbody> -->
+<!-- 										<tr style="background-color: #dfe3ee"> -->
+<!-- 											<td> -->
+<!-- 												<div class="derechaFloat"> -->
+<!-- 													Mensajes: 100<br/> -->
+<!-- 													Ubicacion: Buenos Aires<br/> -->
+<!-- 													Antiguedad: 4 años<br/> -->
+<!-- 												</div> -->
+<!-- 												<div style="width: 100px;"> -->
+<!-- 													<div class="derechaFloat"> -->
+<!-- 														<H4>pepe</H4> -->
+<!-- 													</div> -->
+<%-- 													<img src="${pageContext.request.contextPath}/imagen/cerrado.jpeg" --%>
+<!-- 														class="img-img-thumbnail small" alt="Responsive image"> -->
+<!-- 												</div> -->
+<!-- 											</td> -->
+<!-- 										</tr> -->
+<!-- 										<tr> -->
+<!-- 											<td><p class="text-center">Ya llego java 7</p><br/></td> -->
+<!-- 										</tr> -->
+<!-- 										<tr> -->
+<!-- 											<td>Amigos ya llego la nueva version de java!<br/> Saludos,</td> -->
+<!-- 										</tr> -->
+<!-- 										<tr> -->
+<!-- 											<td> -->
+<!-- 												<div align="right"> -->
+<!-- 													<div class="btn-group page-header-btn" role="group" -->
+<!-- 														aria-label="..."> -->
+<!-- 														<a class=" btn-link" href="#">Inicio</a> -->
+<!-- 														<button id="btn4" type="button" class="btn-primary">Citar</button> -->
+<!-- 															<div id="form-mensaje"> -->
+<!-- 																<div class="jqte-test"> -->
+<!-- 																	<div id="imagen"></div> -->
+<!-- 															    </div> -->
+<!-- 																<script> -->
+// 																	$('.jqte-test').jqte();
+// 																	var jqteStatus = true;
+// 																	$(".status").click(function() {
+// 																		jqteStatus = jqteStatus ? false : true;
+// 																		$('.jqte-test').jqte({
+// 																			"status" : jqteStatus
+// 																		})
+// 																	});
+<!-- 															 	</script> -->
+<!-- 															 	<button type="button" class="btn-primary">Guardar</button> -->
+<!-- 															</div> -->
+<!-- 													   	<button id="btn5" type="button" class="btn-primary">Me gusta</button> -->
+<!-- 													</div> -->
+<!-- 												</div> -->
+<!-- 											</td> -->
+<!-- 										</tr> -->
+<!-- 									</tbody> -->
+<!-- 								</table> -->
 							</div>
 							<div align="right">
 								<nav>

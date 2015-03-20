@@ -10,7 +10,16 @@ public class Respuesta {
 	private int meGusta;
 	private Tema tema;
 	private Date fecha;
+	private int denuncia;
 	
+	public int getDenuncia() {
+		return denuncia;
+	}
+
+	public void setDenuncia(int denuncia) {
+		this.denuncia = denuncia;
+	}
+
 	public Date getFecha() {
 		return fecha;
 	}

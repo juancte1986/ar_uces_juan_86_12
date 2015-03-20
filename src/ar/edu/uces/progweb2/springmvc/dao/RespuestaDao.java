@@ -7,13 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
-import ar.edu.uces.progweb2.springmvc.model.Genero;
+import ar.edu.uces.progweb2.springmvc.model.Respuesta;
 import ar.edu.uces.progweb2.springmvc.model.Tema;
 
 @Transactional(readOnly = true)
 @Component
-public class TemaDao {
+public class RespuestaDao {
 	
 	private SessionFactory sessionFactory;
 	
@@ -21,24 +20,24 @@ public class TemaDao {
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
-
+	
 	public Tema get(long id) {
 		Session session = sessionFactory.getCurrentSession();
-		Tema out = (Tema) session.get(Tema.class, id);
+		Tema out = (Tema) session.get(Respuesta.class, id);
 		return out;
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Tema> listarTemas(Genero genero) {
+	public List<Respuesta> listarRespuestas(Tema tema) {
 		Session session = sessionFactory.getCurrentSession();
-		org.hibernate.Query q = session.createQuery("FROM Tema t where t.genero.id = :genero_id"); 
-		q.setParameter("genero_id", genero.getId());
+		org.hibernate.Query q = session.createQuery("FROM Respuesta r where r.tema.id = :tema_id"); 
+		q.setParameter("tema_id", tema.getId());
 		return q.list();
 	}
 
 	@Transactional(readOnly = false, propagation = Propagation.REQUIRED)
-	public void save(Tema Tema) {
+	public void save(Respuesta respuesta) {
 		Session session = sessionFactory.getCurrentSession();
-		session.save(Tema);
+		session.save(respuesta);
 	}
 }

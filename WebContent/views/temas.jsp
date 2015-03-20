@@ -46,7 +46,7 @@
 
 <script type="text/javascript">
 	$.metodo = function(lista) {
-
+		var url= '<c:url value="/services/listarRespuestas/" />';
 		var cadena = '<table>';
 		cadena += '<thead>';
 		cadena += '<tr>';
@@ -63,16 +63,16 @@
 			cadena += '<td colspan=6>No existen registros</td>';
 		} else {
 			$.each(lista, function(index, value) {
-							cadena += '<tr>';
-							cadena += '<td><img src="${pageContext.request.contextPath}/imagen/cerrado.jpeg" class="img-img-thumbnail small" alt="Responsive image"></td>';
-							cadena += '<td>' + value.titulo + ' | '
-									+ value.owner.user + '</td>';
-							cadena += '<td>' + value.puntuacion + '</td>';
-							cadena += '<td>Lolo Ayer 10: 45hs</td>';
-							cadena += '<td>10</td>'
-							cadena += '<td>200</td>';
-							cadena += '</tr>';
-						});
+				url += value.id;
+				cadena += '<tr>';
+				cadena += '<td><img src="${pageContext.request.contextPath}/imagen/cerrado.jpeg" class="img-img-thumbnail small" alt="Responsive image"></td>';
+				cadena += '<td>' + '<a href="'+ url+'">'+value.titulo +'</a>  | ' + value.owner.user + '</td>';
+				cadena += '<td>' + value.puntuacion + '</td>';
+				cadena += '<td>Lolo Ayer 10: 45hs</td>';
+				cadena += '<td>10</td>'
+				cadena += '<td>200</td>';
+				cadena += '</tr>';
+			});
 		}
 		cadena += '</tbody>';
 		cadena += '</table>';
@@ -133,8 +133,10 @@
 		$("#ajaxPostButton").click(
 			function() {
 				var titulo = $("#tema-titulo").val();
-				var tema = {}
+				var texto = $(".jqte-test").val();
+				var tema = {};
 				tema.titulo = titulo;
+				tema.texto = texto;
 				$.ajax({
 					url : '<c:url value="/services/newTema" />',
 					type : "POST",
@@ -248,7 +250,7 @@
 							$('.jqte-test').jqte();
 							var jqteStatus = true;
 							$(".status").click(function() {
-								jqteStatus = jqteStatus ? false : true;
+								{source: false}
 								$('.jqte-test').jqte({
 									"status" : jqteStatus
 								})
