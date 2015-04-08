@@ -18,6 +18,6 @@
 		<a href='<c:url value="/services/find?id=7" />'>Find id 7</a><br/>
 		<a href='<c:url value="/services/get/7" />'>Get id 7</a><br/>
 		<a href='<c:url value="/views/jquery.jsp" />'>JQuery Test</a><br/>
-		<a href='<c:url value="listarTemas.htm" />'>Listar temas</a><br/>
+		<a href='<c:url value="menuBoot.htm" />'>Listar temas</a><br/>
 	</body>
 </html>

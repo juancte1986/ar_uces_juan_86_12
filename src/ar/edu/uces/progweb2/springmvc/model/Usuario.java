@@ -4,7 +4,8 @@ public class Usuario {
 	
 	private Long id;
 	private String user;
-	
+	private String pass;
+
 	public Usuario(){
 		
 	}
@@ -28,6 +29,14 @@ public class Usuario {
 	
 	public void setUser(String user) {
 		this.user = user;
+	}
+	
+	public String getPass() {
+		return pass;
+	}
+
+	public void setPass(String pass) {
+		this.pass = pass;
 	}
 	
 }

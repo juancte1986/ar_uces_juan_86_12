@@ -8,5 +8,6 @@
 			<generator class="native" />
 		</id>
 		<property column="user" name="user" />
+		<property column="password" name="pass" />
 	</class>
 </hibernate-mapping>

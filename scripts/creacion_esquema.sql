@@ -20,10 +20,11 @@ CREATE TABLE `Avatar` (
 CREATE TABLE `Usuario` (
   `id` INT NOT NULL AUTO_INCREMENT,
    user varchar(500) NOT NULL,
+   password varchar(50) NOT NULL,
   `avatar` BLOB NULL ,
   PRIMARY KEY (`id`)  );
 
-insert into Usuario (user) values ('jveron');
+insert into Usuario (user, password) values ('jveron','1234');
 
 CREATE TABLE Genero(
 	id INT NOT NULL AUTO_INCREMENT,

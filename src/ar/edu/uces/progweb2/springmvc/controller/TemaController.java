@@ -40,6 +40,13 @@ public class TemaController {
 	public void setRespuestaDao(RespuestaDao respuestaDao){
 		this.respuestaDao = respuestaDao;
 	}
+	
+	@RequestMapping(value = "/menuBoot", method = RequestMethod.GET)
+	public String  crearTema(){
+		
+		return "/views/menuBoot.jsp";
+	}
+
 
 	@RequestMapping(value = "/listarTemas", method = RequestMethod.GET)
 	public ModelAndView listarTemas(){
