@@ -46,10 +46,7 @@
 							Editar tu info
 						</div>
 						<div class="panel-body">
-							<div class="divCente padrer">
 								<jsp:include page="/views/formPerfil.jsp"/>
-							</div>
-
 						</div>
 				   </div>
 				</div>

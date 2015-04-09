@@ -25,13 +25,15 @@
 		<script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
 	</head>
 <body>
-	<div id="form-editarInfo hijo">
-		<form class="inputInicio">
-		    <fieldset class="form-control scheduler-border">
-		    	<legend class="form-control scheduler-border"><h4>Datos personales</h4></legend>
+	<div class="divHijo">
+		<form>
+			<fieldset class="form-control scheduler-border">
+				<legend class="form-control scheduler-border">
+					<h4>Datos personales</h4>
+				</legend>
 				<div class="form-group">
-					<label for="exampleInputEmail1">Nombre</label> <input
-						type="email" class="form-control" id="exampleInputEmail1"
+					<label for="exampleInputEmail1">Nombre</label> <input type="email"
+						class="form-control" id="exampleInputEmail1"
 						placeholder="Enter email">
 				</div>
 				<div class="form-group">
@@ -41,23 +43,23 @@
 				</div>
 				<div class="form-group">
 					<label for="fecha">Fecha de Nacimiento</label>
-					<div id ="fecha" class="form-inline">
+					<div id="fecha" class="form-inline">
 						<div class="form-group">
-						    <label for="dia">Dia</label>
-							<select id="dia" class="form-control">
+							<label for="dia">Dia</label> <select id="dia"
+								class="form-control">
 								<option>1</option>
 							</select>
 						</div>
 						<div class="form-group">
-							<label for="dia">Mes</label>
-							<select id="mes" class="form-control">
+							<label for="dia">Mes</label> <select id="mes"
+								class="form-control">
 								<option>1</option>
 							</select>
 						</div>
-						
+
 						<div class="form-group">
-							<label for="anio">Año</label>
-							<select id="anio" class="form-control">
+							<label for="anio">Año</label> <select id="anio"
+								class="form-control">
 								<option>1</option>
 							</select>
 						</div>
@@ -65,28 +67,25 @@
 				</div>
 			</fieldset>
 			<fieldset class="form-control scheduler-border">
-			    <legend class="form-control scheduler-border"><h4>Otros datos</h4></legend>
-			<div class="form-group">
-				<label for="perfil-biografia">Biografia</label> <textarea
-					class="form-control" id="perfil-biografia"
-					></textarea>
-			</div>
-			<div class="form-group">
-				<label for="perfil-biografia">Ocupacion</label> <textarea
-					class="form-control" id="perfil-biografia"
-					></textarea>
-			</div>
-			<div class="form-group">
-				<label for="perfil-biografia">Interes general</label> <textarea
-					class="form-control" id="perfil-biografia"
-					></textarea>
-			</div>
+				<legend class="form-control scheduler-border">
+					<h4>Otros datos</h4>
+				</legend>
+				<div class="form-group">
+					<label for="perfil-biografia">Biografia</label>
+					<textarea class="form-control" id="perfil-biografia"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="perfil-biografia">Ocupacion</label>
+					<textarea class="form-control" id="perfil-biografia"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="perfil-biografia">Interes general</label>
+					<textarea class="form-control" id="perfil-biografia"></textarea>
+				</div>
 			</fieldset>
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
+			<div align="center" class="form-group">
 					<button type="submit" class="btn btn-primary">Guardar</button>
 					<button type="reset" class="btn btn-primary">Resetear</button>
-				</div>
 			</div>
 		</form>
 	</div>

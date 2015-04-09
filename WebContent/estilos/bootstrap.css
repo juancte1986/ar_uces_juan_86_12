@@ -5908,7 +5908,7 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:hover,a.list-gro
 	border-radius: 4px;
 	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-	min-width: 930px;
+	min-width: 900px;
 }
 
 .panel-body {
@@ -5916,7 +5916,7 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:hover,a.list-gro
 	min-height: 200px;
 }
 
-.panel-heading {
+.-heading {
 	padding: 10px 15px;
 	border-bottom: 1px solid transparent;
 	border-top-right-radius: 3px;
