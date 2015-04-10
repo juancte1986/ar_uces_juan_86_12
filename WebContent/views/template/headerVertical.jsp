@@ -15,7 +15,7 @@
 			<img src="${pageContext.request.contextPath}/imagen/foro4.jpeg"
 				class="img-responsive anguloIzquierdo" alt="Responsive image"><br />
 		<div align="right">
-		<div class="btn-group page-header-btn" role="group" aria-label="...">
+		<div class="btn-group page-header-btn" role="group">
 				<a class=" btn-link" href="#">Inicio</a>
 				<button id="btn1" type="button" class=" btn-link">Iniciar
 					session</button>
