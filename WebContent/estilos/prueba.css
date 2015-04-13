@@ -133,3 +133,14 @@ legend.scheduler-border {
 	line-height: 1.1;
 	color: inherit;
 }
+
+
+/* Previsualizar */
+
+.area-visualizar{
+	width:400px;
+	background-color: blue;
+	min-height: 100px;
+}
+
+

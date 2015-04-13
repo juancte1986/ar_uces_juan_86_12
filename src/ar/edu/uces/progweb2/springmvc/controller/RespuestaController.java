@@ -8,6 +8,7 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -34,13 +35,14 @@ public class RespuestaController {
 	}
 	
 	@RequestMapping(value = "/listarRespuestas/{id}", method = RequestMethod.GET)
-	public ModelAndView listarRespuestas(@PathVariable Long id){
+	public String listarRespuestas(@PathVariable Long id, ModelMap model){
 		Tema tema = this.temaDao.get(id);
 		List<Respuesta> respuestas = this.respuestaDao.listarRespuestas(tema);
 		ObjectMapper mapper = new ObjectMapper();
 		String json="";
 		try {
 			json = mapper.writeValueAsString(respuestas);
+			model.addAttribute("respuestas", json);
 			System.out.println(json);
 		} catch (JsonGenerationException e) {
 			e.printStackTrace();
@@ -49,6 +51,6 @@ public class RespuestaController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}	
-		return new ModelAndView("/views/tema.jsp","respuestas",json);
+		return "/views/tema.jsp";
 	}
 }

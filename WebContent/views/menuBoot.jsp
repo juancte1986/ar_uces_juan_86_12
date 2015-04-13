@@ -109,7 +109,7 @@
 					<div class="panel-body"
 						style="background-image: url('${pageContext.request.contextPath}/imagen/programacion.jpeg')">
 						<div class="btn-group" role="group" aria-label="...">
-							<a href="#" class="btn btn-success btn-lg" role="button">Java</a>
+							<a href='<c:url value="/listarTemas.htm" />' class="btn btn-success btn-lg" role="button">Java</a>
 							<a href="#" class="btn btn-success btn-lg" role="button">PHP</a> <a
 								href="#" class="btn btn-success btn-lg" role="button">.NET</a> <a
 								href="#" class="btn btn-success btn-lg" role="button">C/C++</a>

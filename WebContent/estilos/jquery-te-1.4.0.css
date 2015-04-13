@@ -340,6 +340,7 @@
 	background:#FFF;
 	min-height:100px;
 	max-height:900px;
+	max-width: 200px;
 	overflow:auto;
 	outline:none;
 	word-wrap:break-word; -ms-word-wrap:break-word;
@@ -399,6 +400,7 @@
 	padding:0 !important;
 	display:block !important;
 	width:100% !important;
+/* 	width:400px; */
 	min-height:100px;
 	font-family:Courier, Arial, sans-serif !important;
 	font-weight:normal;

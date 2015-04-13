@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -26,7 +31,7 @@
 		<script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 		<script
 			src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}js/jquery.tooltipster.min.js"></script>
 		<script type="text/javascript"
 			src="${pageContext.request.contextPath}/js/jquery-te-1.4.0.min.js"
 			charset="utf-8"></script>
@@ -42,19 +47,20 @@
 					cadena += '<tr>';
 					cadena += '<th>10/02/2013<div class="derechaFloat">#'+index+' | <a href="#">Inicio</a></div></th>' ;
 					cadena += '</tr>';
-					cadena += '</thead>';
-					
-					cadena += '<tbody>';
-					
-					cadena += '<tr style="background-color: #dfe3ee">';
+					cadena += '<tr>';
+					cadena += '<td style="background-color: #dfe3ee">';
 					cadena += '<div class="derechaFloat"> Mensajes: 100<br/>Ubicacion: Buenos Aires<br/>Antiguedad: 4 años<br/></div>';
 					cadena += '<div style="width: 100px;"><div class="derechaFloat"><H4>pepe</H4></div>'
 						+'<img src="${pageContext.request.contextPath}/imagen/cerrado.jpeg"class="img-img-thumbnail small" alt="Responsive image">'
 						+'</div>'; //Datos del usuario
+					cadena += '</td>';
 					cadena += '</tr>';
+					cadena += '</thead>';
+					
+					cadena += '<tbody>';
 					
 					cadena += '<tr>';
-					cadena += '<th><div align="center">'+ value.tema.titulo+'</div></th>';
+					cadena += '<td><div align="center">'+ value.tema.titulo+'</div></td>';
 					cadena += '</tr>';//titulo
 					
 					cadena += '</tr>';
@@ -62,14 +68,12 @@
 					cadena += '</tr>';
 					
 					cadena +='<tr>';
+					cadena +='<td>';
 					cadena +='<div align="right"><div class="btn-group page-header-btn" role="group"aria-label="...">'
-						+'<a class=" btn-link" href="#">Inicio</a><button id="btn4" type="button" class="btn-primary">Citar</button>'
-						+'<div id="form-mensaje"><div class="jqte-test"><div id="imagen"></div></div>'
+						+'<a class=" btn-link" href="#">Inicio</a>'
+						+'<button id="btn4" type="button" class="btn-primary">Citar</button>'
 						+'<button type="button" class="btn-primary">Guardar</button>'
-						+'</div>'
-			   			+'<button id="btn5" type="button" class="btn-primary">Me gusta</button>'
-			   			+'</div>'
-			   			+'</div>'
+			   			+'<button id="btn5" type="button" class="btn-primary">Responder</button>'
 			   			+'</td>'
 			   			+'</tr>';
 					cadena += '</tbody>';
@@ -131,59 +135,7 @@
 	<body>
 		<div class="container">
 			<div class="page-header">
-				<img src="${pageContext.request.contextPath}/imagen/foro4.jpeg"
-					class="img-responsive anguloIzquierdo" alt="Responsive image"><br />
-				<div align="right">
-					<div class="btn-group page-header-btn" role="group" aria-label="...">
-						<a class=" btn-link" href="#">Inicio</a>
-						<button id="btn1" type="button" class=" btn-link">Iniciar
-							session</button>
-						<button id="btn2" type="button" class=" btn-link">Registrarse</button>
-						<div class="btn-group">
-							<button type="button" class="btn-link dropdown-toggle"
-								data-toggle="dropdown" aria-expanded="false">
-								magocap <span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Modificar perfil</a></li>
-								<li><a href="#">Mesnsajes privados</a></li>
-								<li><a href="#">Cerrar sesion</a></li>
-							</ul>
-						</div>
-						<div class="btn-group">
-							<button type="button" class="btn-link dropdown-toggle"
-								data-toggle="dropdown" aria-expanded="false">
-								Administrator <span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Modificar perfil</a></li>
-								<li><a href="#">Mesnsajes privados</a></li>
-								<li><a href="#">Cerrar sesion</a></li>
-							</ul>
-						</div>
-					</div>
-					<div id="form-login" class="form-group">
-						<form class="x">
-							<h2 class="form-signin-heading">Please sign in</h2>
-							<input class="form-control" type="text" placeHolder="Usuario">
-							<input class="form-control" type="password" placeHolder="Clave">
-							<input value="remember-me" type="checkbox">Remember me<br />
-							<button class="btn btn-mg btn-primary" type="submit">Signin</button>
-						</form>
-					</div>
-					<div id="form-register" class="form-group">
-						<form class="x">
-							<h2 class="form-signin-heading">Registrarse</h2>
-							<input class="form-control" type="text" placeHolder="Email"><br />
-							<input class="form-control" type="text" placeHolder="Usuario"><br />
-							<input class="form-control" type="password" placeHolder="Clave"><br />
-							<input class="form-control" type="password"
-								placeHolder="Confirmar clave"><br />
-							<button class="btn btn-mg btn-primary" type="submit">Cargar</button>
-							<button class="btn btn-mg btn-primary" type="submit">Reiniciar</button>
-						</form>
-					</div>
-				</div>
+			 	<jsp:include page="/views/template/headerVertical.jsp"/> 
 			</div>
 			<div class="page-content">
 				<div class="page-content">
@@ -198,7 +150,7 @@
 						<div class="panel-body">
 							<nav>
 								<ul class="pager">
-									<li><a href="#" aria-label="Previous"> <span
+									<li><a href='<c:url value="/listarTemas.htm" />' aria-label="Previous"> <span
 											aria-hidden="true">&laquo; Volver</span>
 									</a></li>
 								</ul>
@@ -246,14 +198,14 @@
 <!-- 																	<div id="imagen"></div> -->
 <!-- 															    </div> -->
 <!-- 																<script> -->
-// 																	$('.jqte-test').jqte();
-// 																	var jqteStatus = true;
-// 																	$(".status").click(function() {
-// 																		jqteStatus = jqteStatus ? false : true;
-// 																		$('.jqte-test').jqte({
-// 																			"status" : jqteStatus
-// 																		})
-// 																	});
+<!-- // 																	$('.jqte-test').jqte(); -->
+<!-- // 																	var jqteStatus = true; -->
+<!-- // 																	$(".status").click(function() { -->
+<!-- // 																		jqteStatus = jqteStatus ? false : true; -->
+<!-- // 																		$('.jqte-test').jqte({ -->
+<!-- // 																			"status" : jqteStatus -->
+<!-- // 																		}) -->
+<!-- // 																	}); -->
 <!-- 															 	</script> -->
 <!-- 															 	<button type="button" class="btn-primary">Guardar</button> -->
 <!-- 															</div> -->
@@ -299,8 +251,7 @@
 				</div>
 			</div>
 			<div class="page-footer">
-				<button type="button" class="btn-link">Contactenos</button>
-				<a class=" btn-link" href="#">Privacidad</a>
+				<jsp:include page="/views/template/footerVertical.jsp"/>
 			</div>
 		</div>
 	</body>

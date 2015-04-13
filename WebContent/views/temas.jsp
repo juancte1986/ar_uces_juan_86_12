@@ -46,7 +46,6 @@
 
 <script type="text/javascript">
 	$.metodo = function(lista) {
-		var url= '<c:url value="/services/listarRespuestas/" />';
 		var cadena = '<table>';
 		cadena += '<thead>';
 		cadena += '<tr>';
@@ -63,7 +62,7 @@
 			cadena += '<td colspan=6>No existen registros</td>';
 		} else {
 			$.each(lista, function(index, value) {
-				url += value.id;
+				var url= '<c:url value="/services/listarRespuestas/" />'+value.id;
 				cadena += '<tr>';
 				cadena += '<td><img src="${pageContext.request.contextPath}/imagen/cerrado.jpeg" class="img-img-thumbnail small" alt="Responsive image"></td>';
 				cadena += '<td>' + '<a href="'+ url+'">'+value.titulo +'</a>  | ' + value.owner.user + '</td>';
@@ -80,7 +79,7 @@
 	}
 
 	$(document).ready(function() {
-		lista = ${temas};
+		var lista = ${temas};
 		$.metodo(lista);
 	});
 
@@ -166,59 +165,7 @@
 <body>
 	<div class="container">
 		<div class="page-header">
-			<img src="${pageContext.request.contextPath}/imagen/foro4.jpeg"
-				class="img-responsive anguloIzquierdo" alt="Responsive image"><br />
-			<div align="right">
-				<div class="btn-group page-header-btn" role="group" aria-label="...">
-					<a class=" btn-link" href="#">Inicio</a>
-					<button id="btn1" type="button" class=" btn-link">Iniciar
-						session</button>
-					<button id="btn2" type="button" class=" btn-link">Registrarse</button>
-					<div class="btn-group">
-						<button type="button" class="btn-link dropdown-toggle"
-							data-toggle="dropdown" aria-expanded="false">
-							magocap <span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu" role="menu">
-							<li><a href="#">Modificar perfil</a></li>
-							<li><a href="#">Mesnsajes privados</a></li>
-							<li><a href="#">Cerrar sesion</a></li>
-						</ul>
-					</div>
-					<div class="btn-group">
-						<button type="button" class="btn-link dropdown-toggle"
-							data-toggle="dropdown" aria-expanded="false">
-							Administrator <span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu" role="menu">
-							<li><a href="#">Modificar perfil</a></li>
-							<li><a href="#">Mesnsajes privados</a></li>
-							<li><a href="#">Cerrar sesion</a></li>
-						</ul>
-					</div>
-				</div>
-				<div id="form-login" class="form-group">
-					<form class="x">
-						<h2 class="form-signin-heading">Please sign in</h2>
-						<input class="form-control" type="text" placeHolder="Usuario">
-						<input class="form-control" type="password" placeHolder="Clave">
-						<input value="remember-me" type="checkbox">Remember me<br />
-						<button class="btn btn-mg btn-primary" type="submit">Signin</button>
-					</form>
-				</div>
-				<div id="form-register" class="form-group">
-					<form class="x">
-						<h2 class="form-signin-heading">Registrarse</h2>
-						<input class="form-control" type="text" placeHolder="Email"><br />
-						<input class="form-control" type="text" placeHolder="Usuario"><br />
-						<input class="form-control" type="password" placeHolder="Clave"><br />
-						<input class="form-control" type="password"
-							placeHolder="Confirmar clave"><br />
-						<button class="btn btn-mg btn-primary" type="submit">Cargar</button>
-						<button class="btn btn-mg btn-primary" type="submit">Reiniciar</button>
-					</form>
-				</div>
-			</div>
+			<jsp:include page="/views/template/headerVertical.jsp"/> 
 		</div>
 		<div class="page-content">
 			<div class="input-group search">
@@ -247,15 +194,15 @@
 							<div id="imagen"></div>
 						</div>
 						<script>
-							$('.jqte-test').jqte();
-							var jqteStatus = true;
-							$(".status").click(function() {
-								{source: false}
-								$('.jqte-test').jqte({
-									"status" : jqteStatus
+							$('.jqte-test').jqte(); 
+ 							var jqteStatus = true; 
+							$(".status").click(function() { 
+								{source: false} 
+								$('.jqte-test').jqte({ 
+									"status" : jqteStatus 
 								})
 							});
-						</script>
+ 						</script> 
 						<input type="button" id="ajaxPostButton" value="Enviar" /><br />
 					</div>
 					Temas en el foro: JAVA
@@ -266,19 +213,19 @@
 					</div>
 					<div align="right">
 						<nav>
-						<ul class="pagination">
-							<li><a href="#" aria-label="Previous"> <span
-									aria-hidden="true">&laquo;</span>
-							</a></li>
-							<li><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-							<li><a href="#" aria-label="Next"> <span
-									aria-hidden="true">&raquo;</span>
-							</a></li>
-						</ul>
+							<ul class="pagination">
+								<li><a href="#" aria-label="Previous"> <span
+										aria-hidden="true">&laquo;</span>
+								</a></li>
+								<li><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+								<li><a href="#" aria-label="Next"> <span
+										aria-hidden="true">&raquo;</span>
+								</a></li>
+							</ul>
 						</nav>
 					</div>
 				</div>
@@ -316,8 +263,7 @@
 			</div>
 		</div>
 		<div class="page-footer">
-			<button type="button" class="btn-link">Contactenos</button>
-			<a class=" btn-link" href="#">Privacidad</a>
+			<jsp:include page="/views/template/footerVertical.jsp"/>
 		</div>
 	</div>
 </body>

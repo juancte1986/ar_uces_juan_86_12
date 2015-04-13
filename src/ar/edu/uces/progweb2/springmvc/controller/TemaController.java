@@ -11,6 +11,7 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -49,11 +50,10 @@ public class TemaController {
 
 
 	@RequestMapping(value = "/listarTemas", method = RequestMethod.GET)
-	public ModelAndView listarTemas(){
+	public String listarTemas(ModelMap model){
 		System.out.println("Listar tema");
 		List<Tema> temas = this.temaDao.listarTemas(new Genero("Java",(long) 1));
 		ObjectMapper mapper = new ObjectMapper();
-		ModelAndView out = new ModelAndView("/views/temas.jsp");
 		try {
 			String json;
 			if(temas.size() == 0){
@@ -63,7 +63,7 @@ public class TemaController {
 				json = mapper.writeValueAsString(temas);
 			}
 			System.out.println(json);
-			out.addObject("temas", json);
+			model.addAttribute("temas", json);
 		} catch (JsonGenerationException e) {
 			e.printStackTrace();
 		} catch (JsonMappingException e) {
@@ -71,7 +71,7 @@ public class TemaController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}	
-		return out;
+		return "/views/temas.jsp";
 	}
 
 	@RequestMapping(value = "/newTema", method = RequestMethod.POST)
@@ -83,8 +83,8 @@ public class TemaController {
 		tema.setGenero(new Genero("Java", (long)1));
 		tema.setFecha(new Date());
 		tema.setPuntuacion(0);
-		this.crearRespueta(tema);
 		this.temaDao.save(tema);
+		this.crearRespueta(tema);
 		System.out.println(tema.toString());
 		List<Tema> temas = this.temaDao.listarTemas(new Genero("Java",(long) 1));
 		HashMap<String, List<Tema>> out = new HashMap<String,List<Tema>>();
