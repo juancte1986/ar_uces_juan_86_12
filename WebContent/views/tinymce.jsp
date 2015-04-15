@@ -4,11 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link type="text/css" rel="stylesheet"
-	href="${pageContext.request.contextPath}/estilos/jquery2-te-1.4.0.css">
+<title>Insert title here</title>
 </head>
 <body>
-	<div class="area-visualizar">
-	</div>
+
 </body>
 </html>

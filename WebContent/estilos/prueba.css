@@ -138,9 +138,11 @@ legend.scheduler-border {
 /* Previsualizar */
 
 .area-visualizar{
-	width:400px;
-	background-color: blue;
+	width:900px;
+	border-color: black;
+	background-color: white;
 	min-height: 100px;
+	word-wrap:break-word; -ms-word-wrap:break-word;
 }
 
 

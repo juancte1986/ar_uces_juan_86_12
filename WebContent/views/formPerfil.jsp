@@ -4,14 +4,14 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link type="text/css" rel="stylesheet"
 	href="${pageContext.request.contextPath}/estilos/jquery-te-1.4.0.css">
-<!-- 		<link rel="stylesheet" -->
-<!-- 			href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
+<!-- <link rel="stylesheet" -->
+<!-- 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/estilos/tooltipster.css"
 	media="screen" type="text/css" />
@@ -22,23 +22,20 @@
 	href="${pageContext.request.contextPath}/estilos/prueba.css"
 	media="screen" type="text/css" />
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/js/jquery-te-1.4.0.min.js"
-	charset="utf-8"></script>
-</head>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.tooltipster.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-te-1.4.0.min.js" charset="utf-8"></script>
 <script type="text/javascript">
-	$(function(){
-		$("#button-vista-previa").click(
-			function() {
-				var texto = $('.jqte_editor').val();
-				$('.jqte_previsualizar').jqte();
-				$('.jqte_previsualizar').html(texto);		
-		});
+$(function(){
+	$("#btn-vista-previa").click(
+		function() {
+			var texto = $('.jqte-test').val();
+// 		    $(".test").jqteVal(texto);
+			$(".area-visualizar").html(texto);
 	});
+});
 </script>
+</head>
 <body>
 <!-- 	<div id="form-edit-info-perfil" class="panel panel-default"> -->
 <!-- 		<div class="panel-heading2">Editar tu info magocap</div> -->
@@ -220,39 +217,39 @@
 				<form>
 					<fieldset class="form-control scheduler-border">
 						<legend class="form-control scheduler-border"> Tu firma </legend>
-						<div id="form-mensaje">
-							<textarea class="jqte_editor">
-<!-- 								<div id="imagen"></div> -->
-							</textarea>
-							<script>
-								$('.jqte_editor').jqte();
-								var jqteStatus = true;
-								$(".status").click(function() {
-									jqteStatus = jqteStatus ? false : true;
-									$('.jqte_editor').jqte({
-										"status" : jqteStatus
-									});
-									
-								});
-							</script>
-						</div>
-						<input type="file" id="cargarImagen">
+							<div class="jqte-test">
+								<div id="imagen"></div>
+							</div>
+							<script> 
+								$('.jqte-test').jqte({link: false});  
+//  									settings of status 
+								var jqteStatus = true; 
+								$(".status").click(function() 
+ 									{ 
+										jqteStatus = jqteStatus ? false : true;  
+										$('.jqte-test').jqte({"status" : jqteStatus}) ; 
+									}); 
+							</script> 
+							<input type="file" id="cargarImagen">
 					</fieldset>
 					<div align="center" class="form-group">
 						<button type="submit" class="btn btn-primary">Guardar
 							cambios</button>
-						<button type="button" id="button-vista-previa" class="btn btn-primary">Vista
-							previa de la firma</button>
+						<button type="button" id="btn-vista-previa"
+							class="btn btn-primary">Vista previa de la firma</button>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
-<%-- 	<jsp:include page="/views/template/previsualizar.jsp"/> --%>
 	<div id="form-edit-emailYPass" class="panel panel-default">
 		<div class="panel-heading2">Previsualizar firma</div>
 		<div class="panel-body">
-			<div class="jqte_previsualizar"></div>
+				<div class="area-visualizar">
+				</div>
+			<div align="center" class="form-group">
+				<button type="submit" class="btn btn-primary">Cancelar</button>
+			</div>
 		</div>
 	</div>
 </body>

@@ -24,15 +24,7 @@
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
-<title>Foro</title>
-<script type="text/javascript">
-	$(function() {
-		$('#cumple').tooltipster({
-			interactive : true, // crea un toolstip interactivo
-			content : $('<a href="#">Java</a>')
-		});
-	});
-</script>
+<title>Foro : Tu perfil</title>
 </head>
 <body>
 	<div class="container">

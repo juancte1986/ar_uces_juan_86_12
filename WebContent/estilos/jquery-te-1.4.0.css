@@ -32,6 +32,7 @@
 	background:#EEE;
 	border-bottom:#BBB 1px solid;
 }
+
 .jqte_tool {
 	float:left;
 	margin:0;
@@ -340,7 +341,7 @@
 	background:#FFF;
 	min-height:100px;
 	max-height:900px;
-	max-width: 200px;
+	max-width: 500px;
 	overflow:auto;
 	outline:none;
 	word-wrap:break-word; -ms-word-wrap:break-word;
@@ -360,6 +361,7 @@
 .jqte_editor img {
     float:left;
 	margin:0 10px 5px 0
+	
 }
 .jqte_editor a[jqte-setlink], .jqte_editor a[jqte-setlink] * {
 	background:#3297FD !important;
