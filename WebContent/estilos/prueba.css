@@ -139,10 +139,18 @@ legend.scheduler-border {
 
 .area-visualizar{
 	width:900px;
-	border-color: black;
-	background-color: white;
+	height:150;
+/* 	border: black solid 1px; */
+/* 	background-color: white; */
 	min-height: 100px;
 	word-wrap:break-word; -ms-word-wrap:break-word;
+}
+
+
+/* Firma solo me deja insertar imagenes de tamaño 100px * 100px */
+.area-visualizar img{
+	max-width: 200px;
+	max-heigt: 200px;
 }
 
 

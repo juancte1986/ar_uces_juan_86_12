@@ -16,7 +16,7 @@
 				class="img-responsive anguloIzquierdo" alt="Responsive image"><br />
 		<div align="right">
 		<div class="btn-group page-header-btn" role="group">
-				<a class=" btn-link" href="#">Inicio</a>
+				<a class=" btn-link" href='<c:url value="/views/menuBoot.jsp" />'>Inicio</a>
 				<button id="btn1" type="button" class=" btn-link">Iniciar
 					session</button>
 				<button id="btn2" type="button" class=" btn-link">Registrarse</button>
@@ -26,7 +26,7 @@
 						magocap <span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="#">Modificar perfil</a></li>
+						<li><a href='<c:url value="/views/perfil.jsp" />'>Modificar perfil</a></li>
 						<li><a href="#">Mesnsajes privados</a></li>
 						<li><a href="#">Cerrar sesion</a></li>
 					</ul>

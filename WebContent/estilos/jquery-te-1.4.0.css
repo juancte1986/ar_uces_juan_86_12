@@ -57,7 +57,7 @@
 	display:block;
 	padding:3px;
 	width:70px;
-	height:16px;
+	height:17px; /*se ajusto para que se vea la palabra normal*/
 	overflow:hidden;
 }
 .jqte_tool.jqte_tool_1 .jqte_tool_text {
@@ -341,7 +341,7 @@
 	background:#FFF;
 	min-height:100px;
 	max-height:900px;
-	max-width: 500px;
+	max-width: 900px;
 	overflow:auto;
 	outline:none;
 	word-wrap:break-word; -ms-word-wrap:break-word;
@@ -360,8 +360,10 @@
 }
 .jqte_editor img {
     float:left;
-	margin:0 10px 5px 0
-	
+	margin:0 10px 5px 0;
+	max-width: 100px;  /*importante para las imagenes no sobrepasen el div*/
+	max-height: 100px;
+	 
 }
 .jqte_editor a[jqte-setlink], .jqte_editor a[jqte-setlink] * {
 	background:#3297FD !important;
@@ -415,6 +417,7 @@
 	css_shadow:none !important;
 	background:none !important;
 	border:none !important;
+	resize:none;
 }
 
 /* title box */
