@@ -43,6 +43,22 @@
 /* 	color: #ffffff; */
 }
 
+/* cuando listo las respuestas me muestra los datos */
+.panel-datos {
+	padding: 10px 15px;
+	border-bottom: 1px solid transparent;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	height: 80px;
+	background-color: #dfe3ee;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: #3b5998;
+}
+
 .btn-right-float{
 	 float: right;
 }
@@ -135,7 +151,7 @@ legend.scheduler-border {
 }
 
 
-/* Previsualizar */
+/* Previsualizar firma */
 
 .area-visualizar{
 	width:900px;
@@ -154,3 +170,15 @@ legend.scheduler-border {
 }
 
 
+/* panel para las mostrar las respuestas */
+
+.panel-respuesta {
+	width: 900px;
+	word-wrap:break-word; -ms-word-wrap:break-word;
+	
+}
+
+.panel-respuesta img {
+	max-width: 200px;
+	max-heigt: 200px
+}
