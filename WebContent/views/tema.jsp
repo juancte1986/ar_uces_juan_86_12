@@ -38,6 +38,16 @@
 	src="${pageContext.request.contextPath}/js/jquery-te-1.4.0.min.js"
 	charset="utf-8"></script>
 <script type="text/javascript">
+
+			$.cambiarCarecteres = function(texto) {
+				$.each(texto, function(index, value) {
+					if(index == 0){
+						value ="";
+					}
+				});
+				
+			}
+			
 			$.metodo = function(lista) {
 				var cadena="";
 				$.each(lista, function(index, value) {
@@ -155,7 +165,6 @@
 									$("#respuestaPostAjax").html("Sending create...");
 								},
 								success : function(result, status, xhr){
-									$("#form-respuesta").dialog("close");
 									var lista = result.respuestas;
 									$.metodo(lista);
 									

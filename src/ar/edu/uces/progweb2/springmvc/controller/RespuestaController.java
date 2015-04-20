@@ -63,7 +63,11 @@ public class RespuestaController {
 	@RequestMapping(value = "/cargarRespuesta/{id}", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
 	public @ResponseBody Map<String, Object> cargarRespuesta(@PathVariable Long id, @RequestBody String texto, ModelMap model){
 		Tema tema = this.temaDao.get(id);
+		texto = texto.substring(1, texto.length()-1);
+		texto = texto.replace("\"","'");
+		texto = texto.replace("\\","");
 		this.crearRespueta(tema, texto);
+		System.out.println(texto);
 		List<Respuesta> respuestas = this.respuestaDao.listarRespuestas(tema);
 		Map<String, Object> out= new HashMap<String, Object>();
 		out.put("respuestas", respuestas);
@@ -80,6 +84,4 @@ public class RespuestaController {
 		respuesta.setTexto(texto);
 		this.respuestaDao.save(respuesta);
 	}
-	
-	
 }
